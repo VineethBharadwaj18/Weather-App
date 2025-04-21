@@ -1,0 +1,90 @@
+<div class="weather-background" [ngClass]="backgroundClass">
+
+  <div *ngIf="isDaytime" class="sun-wrapper">
+    <div class="sun"></div>
+    <div class="sun-glow"></div>
+  </div>
+  
+  <div *ngIf="!isDaytime" class="moon-wrapper">
+    <div class="moon">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    
+    <div class="moon-glow"></div>
+  </div>
+
+  <div class="rain" *ngIf="backgroundClass === 'rainy'">
+    <div class="rain" *ngIf="backgroundClass === 'rainy'">
+      <div
+        class="drop"
+        *ngFor="let drop of drops"
+        [ngStyle]="{
+          left: drop.left + '%',
+          animationDuration: drop.duration + 's',
+          animationDelay: drop.delay + 's'
+        }"
+      ></div>
+    </div>
+    
+  </div>
+  
+  <div class="stars"></div>
+
+
+  <div class="cloud cloud-1">
+    <div class="cloud-layer"></div>
+  </div>
+  <div class="cloud cloud-2">
+    <div class="cloud-layer"></div>
+  </div>
+  <div class="cloud cloud-3">
+    <div class="cloud-layer"></div>
+  </div>
+  <div class="cloud cloud-4">
+    <div class="cloud-layer"></div>
+  </div>
+  <div class="cloud cloud-5">
+    <div class="cloud-layer"></div>
+  </div>
+  
+
+
+  <div class="container">
+    <h1>⚡ Weather App</h1>
+    <p>Enter a city name to get the current weather</p>
+
+    <div class="input-group">
+      <input type="text" [(ngModel)]="city" placeholder="e.g. Hyderabad" />
+      <button (click)="getWeather()">🌦️ Get Weather</button>
+
+    </div>
+
+    <div *ngIf="weather" class="weather-card animate-fade-in">
+      <h2>{{ weather.name }}, {{ weather.sys.country }}</h2>
+
+      <div class="icon-temp">
+        <img [src]="'https://openweathermap.org/img/wn/' + weather.weather[0].icon + '@4x.png'" />
+        <p class="temperature">{{ weather.main.temp }}°C</p>
+      </div>
+
+      <div class="info">
+        <p><strong>Feels Like:</strong> {{ weather.main.feels_like }} °C</p>
+        <p><strong>Humidity:</strong> {{ weather.main.humidity }}%</p>
+        <p><strong>Pressure:</strong> {{ weather.main.pressure }} hPa</p>
+        <p><strong>Wind:</strong> {{ weather.wind.speed }} m/s</p>
+        <p><strong>Clouds:</strong> {{ weather.clouds.all }}%</p>
+        <p><strong>Description:</strong> {{ weather.weather[0].description }}</p>
+      </div>
+    </div>
+  </div>
+
+
+</div>

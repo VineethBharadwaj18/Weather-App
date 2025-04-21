@@ -1,0 +1,518 @@
+/* Background Sky */
+.weather-background {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(to top, #87ceeb 0%, #e0f7ff 100%);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  /* Sun Styling */
+  .sun-wrapper {
+    position: absolute;
+    top: 8%;
+    right: 10%;
+    z-index: 1;
+  }
+  
+  .sun {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #fff700, #ff9900);
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.8);
+    animation: pulse 5s ease-in-out infinite;
+  }
+  
+  .sun-glow {
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255, 255, 0, 0.3), transparent);
+    border-radius: 50%;
+    filter: blur(20px);
+    z-index: -1;
+    animation: slow-glow 6s ease-in-out infinite;
+  }
+  
+  /* Enhanced Clouds */
+  .cloud {
+    position: absolute;
+    z-index: 0; /* Lower than content */
+  }
+  
+  
+  .cloud-layer {
+    background: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    box-shadow:
+      30px 10px 0 0 #fff,
+      60px 0 0 0 #fff,
+      90px 10px 0 0 #fff,
+      45px 20px 0 0 #fff;
+    opacity: 0.9;
+  }
+  
+  /* Cloud Positions + Animation */
+  .cloud-1 {
+    top: 15%;
+    left: -200px;
+    animation: cloudMove 70s linear infinite;
+  }
+  
+  .cloud-2 {
+    top: 35%;
+    left: -300px;
+    animation: cloudMove 100s linear infinite;
+  }
+  
+  .cloud-3 {
+    top: 60%;
+    left: -250px;
+    animation: cloudMove 85s linear infinite;
+  }
+  .cloud-4 {
+  top: 25%;
+  left: -180px;
+  animation: cloudMove 110s linear infinite;
+}
+
+.cloud-5 {
+  top: 50%;
+  left: -150px;
+  animation: cloudMove 90s linear infinite;
+}
+
+  
+  /* Content Box */
+  .content {
+    z-index: 10;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.65);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    color: #333;
+  }
+  
+  input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    padding: 0.7rem 1.5rem;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  button:hover {
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+    box-shadow: 0 6px 20px rgba(0, 114, 255, 0.5);
+    transform: translateY(-2px);
+  }
+  
+  
+  /* Animations */
+  @keyframes cloudMove {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(220vw);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  @keyframes slow-glow {
+    0%, 100% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+  
+
+  .weather-background {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='32' width='32'><text y='24' font-size='24'>🌦️</text></svg>") 16 16, auto;
+  }
+  
+
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to top, #a1c4fd, #c2e9fb);
+    margin: 0;
+    cursor: url('https://em-content.zobj.net/thumbs/120/apple/354/high-voltage_26a1.png'), auto;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 3rem;
+    color: #333;
+    position: relative;
+    z-index: 5;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    color: #2c3e50;
+  }
+  
+  .input-group {
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  input[type="text"] {
+    padding: 0.7rem 1rem;
+    width: 240px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  button {
+    padding: 0.7rem 1.2rem;
+    background-color: #1e90ff;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0c7bdc;
+  }
+  
+  .weather-card {
+    background-color: rgb(196, 245, 242);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 2rem;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .icon-temp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .icon-temp img {
+    width: 80px;
+    height: 80px;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .temperature {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .info p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+  
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Default background */
+.weather-background.default {
+  background: linear-gradient(to top, #87ceeb 0%, #e0f7ff 100%);
+}
+
+/* Night Mode */
+.weather-background.night {
+  position: relative;
+  background: linear-gradient(to top, #0d1117, #1c1f26); /* Darker night gradient */
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  overflow: hidden;
+}
+
+.weather-background.night::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+.weather-background.night .container {
+  position: relative;
+  z-index: 1;
+}
+
+.moon-wrapper {
+  position: absolute;
+  top: 8%;
+  right: 10%;
+  z-index: 1;
+}
+.moon {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #fdfdfd, #aaa);
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+.moon-glow {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+  border-radius: 50%;
+  filter: blur(15px);
+  z-index: -1;
+}
+
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(white 1px, transparent 1px),
+                    radial-gradient(white 1px, transparent 1px);
+  background-size: 100px 100px;
+  background-position: 0 0, 50px 50px;
+  animation: twinkle 2s infinite ease-in-out;
+  opacity: 0.8;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+
+/* Sunny */
+.weather-background.sunny {
+  background: linear-gradient(to top, #fceabb, #f8b500);
+}
+
+/* Cloudy */
+.weather-background.cloudy {
+  background: linear-gradient(to top, #d7d2cc, #304352);
+}
+
+/* Rainy */
+.weather-background.rainy {
+  background: linear-gradient(to top, #4b79a1, #283e51),
+              url('https://images.unsplash.com/photo-1507307985345-37f15e08f157?auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+
+.rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5; /* higher than clouds/background but lower than main content if needed */
+}
+
+.drop {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  animation: rainFall linear infinite;
+}
+
+@keyframes rainFall {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+
+
+.moon-wrapper {
+  position: absolute;
+  top: 8%;
+  right: 10%;
+  z-index: 1;
+}
+
+.moon {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  background: #c7cbd0;
+  border-radius: 50%;
+  box-shadow: inset -20px 0px 0 0px #9098a1, 0 0 40px rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease-in-out;
+  animation: moonPulse 5s ease-in-out infinite;
+}
+
+.moon:hover {
+  transform: scale(1.1);
+}
+
+.moon ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.moon li {
+  position: absolute;
+  background: #737277;
+  border-radius: 50%;
+}
+
+.moon li:nth-child(1) {
+  left: 20px;
+  top: 40px;
+  width: 25px;
+  height: 25px;
+  box-shadow: inset 4px -2px 0 0px #414043;
+}
+.moon li:nth-child(2) {
+  left: 80px;
+  top: 35px;
+  width: 15px;
+  height: 15px;
+  box-shadow: inset 3px -1px 0 0px #414043;
+}
+.moon li:nth-child(3) {
+  left: 60px;
+  top: 90px;
+  width: 15px;
+  height: 15px;
+  box-shadow: inset 3px -1px 0 0px #414043;
+}
+.moon li:nth-child(4) {
+  left: 30px;
+  top: 90px;
+  width: 10px;
+  height: 10px;
+  box-shadow: inset 2px -0.8px 0 0px #414043;
+}
+.moon li:nth-child(5) {
+  left: 50px;
+  top: 15px;
+  width: 10px;
+  height: 10px;
+  box-shadow: inset 2px -0.8px 0 0px #414043;
+}
+.moon li:nth-child(6) {
+  left: 65px;
+  top: 50px;
+  width: 10px;
+  height: 10px;
+  box-shadow: inset 2px -0.8px 0 0px #414043;
+}
+.moon li:nth-child(7) {
+  left: 100px;
+  top: 70px;
+  width: 10px;
+  height: 10px;
+  box-shadow: inset 2px -0.8px 0 0px #414043;
+}
+
+@keyframes moonPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.moon-glow {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent);
+  border-radius: 50%;
+  filter: blur(10px);
+  z-index: -1;
+  animation: slow-glow 6s ease-in-out infinite;
+}
