@@ -537,3 +537,173 @@
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
 }
+
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  /* Adjust container padding */
+  .container {
+    padding: 1.5rem;
+    width: 90%;
+  }
+
+  /* Make heading smaller */
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Stack input and button vertically */
+  .input-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  /* Full width input on mobile */
+  input[type="text"] {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.8rem;
+    box-sizing: border-box;
+  }
+
+  /* Full width button on mobile */
+  button {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.8rem;
+    justify-content: center;
+  }
+
+  /* Adjust weather card width */
+  .weather-card {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  /* Smaller sun/moon on mobile */
+  .sun, .moon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .sun-glow, .moon-glow {
+    width: 110px;
+    height: 110px;
+    top: -15px;
+    left: -15px;
+  }
+
+  /* Adjust moon crater sizes */
+  .moon li:nth-child(1) {
+    width: 18px;
+    height: 18px;
+  }
+  .moon li:nth-child(2),
+  .moon li:nth-child(3) {
+    width: 12px;
+    height: 12px;
+  }
+  .moon li:nth-child(4),
+  .moon li:nth-child(5),
+  .moon li:nth-child(6),
+  .moon li:nth-child(7) {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Reduce cloud sizes */
+  .cloud-layer {
+    width: 40px;
+    height: 40px;
+    box-shadow:
+      20px 5px 0 0 #fff,
+      40px 0 0 0 #fff,
+      60px 5px 0 0 #fff,
+      30px 10px 0 0 #fff;
+  }
+
+  /* Adjust temperature display */
+  .icon-temp {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .temperature {
+    font-size: 2rem;
+  }
+
+  /* Smaller weather icon */
+  .icon-temp img {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Adjust info text size */
+  .info p {
+    font-size: 0.9rem;
+  }
+
+  /* Position attribution better */
+  .by-venny {
+    right: 50%;
+    transform: translateX(50%);
+    width: max-content;
+    font-size: 12px;
+    bottom: 5px;
+  }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .weather-card {
+    padding: 1rem;
+  }
+
+  .temperature {
+    font-size: 1.8rem;
+  }
+
+  .info p {
+    font-size: 0.85rem;
+  }
+
+  /* Even smaller celestial bodies */
+  .sun, .moon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .sun-glow, .moon-glow {
+    width: 80px;
+    height: 80px;
+    top: -10px;
+    left: -10px;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .container {
+    padding: 1rem;
+    transform: scale(0.9);
+  }
+
+  .weather-card {
+    margin-top: 0.5rem;
+  }
+
+  .sun-wrapper, .moon-wrapper {
+    top: 5%;
+    right: 5%;
+  }
+}
