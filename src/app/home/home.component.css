@@ -516,3 +516,24 @@
   z-index: -1;
   animation: slow-glow 6s ease-in-out infinite;
 }
+
+.by-venny {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  color: #ffffffcc;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 6px 12px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+}
+
+.by-venny:hover {
+  transform: scale(1.05);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
